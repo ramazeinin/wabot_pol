@@ -3,7 +3,6 @@ import json
 import requests
 from datetime import datetime
 from fastapi import FastAPI, Request
-from groq import Groq
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -21,7 +20,11 @@ HEADERS = {
 }
 
 app = FastAPI()
-groq_client = Groq(api_key=GROQ_API_KEY)
+import httpx
+from groq import Groq
+
+# Replace groq_client = Groq(api_key=GROQ_API_KEY) with:
+groq_client = Groq(api_key=GROQ_API_KEY, http_client=httpx.Client())
 
 def send_whatsapp_text(chat_id: str, text: str):
     requests.post(
