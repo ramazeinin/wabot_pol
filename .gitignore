@@ -1,0 +1,24 @@
+# Virtual Environment
+waha_chatbot/
+venv/
+.venv/
+env/
+
+# Environment variables & secrets
+.env
+.env.*
+credentials.json
+error_log.txt
+
+# Python bytecode & cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Operating system / IDE files
+.vscode/
+.idea/
+*.log
+.DS_Store
+Thumbs.db
